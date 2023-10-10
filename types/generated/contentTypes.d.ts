@@ -731,10 +731,18 @@ export interface ApiDocumentDocument extends Schema.CollectionType {
       Attribute.SetMinMaxLength<{
         minLength: 11;
       }>;
-    order: Attribute.BigInteger &
+    order: Attribute.String &
       Attribute.Required &
-      Attribute.Private &
-      Attribute.Unique;
+      Attribute.Unique &
+      Attribute.SetMinMaxLength<{
+        minLength: 6;
+      }>;
+    slug: Attribute.UID<'api::document.document', 'order'> &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        minLength: 6;
+        maxLength: 6;
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
