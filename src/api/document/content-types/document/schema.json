@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "documents",
+  "info": {
+    "singularName": "document",
+    "pluralName": "documents",
+    "displayName": "Document",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "documents": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "phone": {
+      "type": "string",
+      "required": true,
+      "minLength": 11,
+      "private": true
+    },
+    "order": {
+      "type": "biginteger",
+      "private": true,
+      "required": true,
+      "unique": true
+    }
+  }
+}
