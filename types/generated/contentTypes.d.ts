@@ -768,6 +768,7 @@ export interface ApiNewsNews extends Schema.CollectionType {
     singularName: 'news';
     pluralName: 'newses';
     displayName: 'News';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -783,6 +784,11 @@ export interface ApiNewsNews extends Schema.CollectionType {
       'manyToMany',
       'api::category.category'
     >;
+    description: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 300;
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -837,6 +843,10 @@ export interface ApiServiceService extends Schema.CollectionType {
     poster: Attribute.Media;
     title: Attribute.String;
     text: Attribute.RichText;
+    description: Attribute.Text &
+      Attribute.SetMinMaxLength<{
+        maxLength: 300;
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

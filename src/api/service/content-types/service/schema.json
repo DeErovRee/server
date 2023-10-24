@@ -28,6 +28,10 @@
     },
     "text": {
       "type": "richtext"
+    },
+    "description": {
+      "type": "text",
+      "maxLength": 300
     }
   }
 }
