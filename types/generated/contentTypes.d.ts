@@ -793,6 +793,35 @@ export interface ApiNewsNews extends Schema.CollectionType {
   };
 }
 
+export interface ApiSeoSeo extends Schema.SingleType {
+  collectionName: 'seos';
+  info: {
+    singularName: 'seo';
+    pluralName: 'seos';
+    displayName: 'SEO';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    category: Attribute.Text;
+    publisher: Attribute.String;
+    keywords: Attribute.Text;
+    openGraph: Attribute.Component<'seo.open-graph'>;
+    icons: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::seo.seo', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::seo.seo', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiServiceService extends Schema.CollectionType {
   collectionName: 'services';
   info: {
@@ -845,6 +874,7 @@ declare module '@strapi/types' {
       'api::category.category': ApiCategoryCategory;
       'api::document.document': ApiDocumentDocument;
       'api::news.news': ApiNewsNews;
+      'api::seo.seo': ApiSeoSeo;
       'api::service.service': ApiServiceService;
     }
   }
