@@ -847,6 +847,7 @@ export interface ApiServiceService extends Schema.CollectionType {
       Attribute.SetMinMaxLength<{
         maxLength: 300;
       }>;
+    PriceList: Attribute.Component<'price.price-list', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

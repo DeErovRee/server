@@ -32,6 +32,11 @@
     "description": {
       "type": "text",
       "maxLength": 300
+    },
+    "PriceList": {
+      "type": "component",
+      "repeatable": true,
+      "component": "price.price-list"
     }
   }
 }

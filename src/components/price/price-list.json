@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_price_price_lists",
+  "info": {
+    "displayName": "PriceList"
+  },
+  "options": {},
+  "attributes": {
+    "Work": {
+      "type": "string"
+    },
+    "LegalEntityPrice": {
+      "type": "biginteger"
+    },
+    "IndividualEntityPrice": {
+      "type": "biginteger"
+    },
+    "DocsReceived": {
+      "type": "text"
+    }
+  }
+}
